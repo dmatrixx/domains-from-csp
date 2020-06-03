@@ -38,6 +38,7 @@ class Domain:
 
 def clean_domains(domains):
     for domain in domains:
+        print(domain)
         ext = tldextract.extract(str(domain.raw_csp_url))
         # If subdomain is wildcard or empty
         if ext[0] in ['*', '']:
@@ -46,7 +47,7 @@ def clean_domains(domains):
         else:
             domain.domain = '.'.join(ext)
         domain.apex_domain = ".".join(tldextract.extract(domain.domain)[1:])
-        print domains
+        
     return domains
 
 
