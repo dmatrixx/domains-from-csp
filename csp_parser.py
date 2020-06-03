@@ -46,6 +46,7 @@ def clean_domains(domains):
         else:
             domain.domain = '.'.join(ext)
         domain.apex_domain = ".".join(tldextract.extract(domain.domain)[1:])
+        print domains
     return domains
 
 
